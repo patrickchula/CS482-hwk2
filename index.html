@@ -1,105 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=640">
-
-    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
-    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-
-    <script type="text/javascript" src="javascripts/modernizr.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
+    <meta charset="UTF-8">
     <title>Cs482-hwk2 by patrickchula</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
-    <a id="forkme_banner" href="https://github.com/patrickchula/CS482-hwk2">View on GitHub</a>
-    <div class="shell">
+    <section class="page-header">
+      <h1 class="project-name">Cs482-hwk2</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/patrickchula/CS482-hwk2" class="btn">View on GitHub</a>
+      <a href="https://github.com/patrickchula/CS482-hwk2/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/patrickchula/CS482-hwk2/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-      <header>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <h1>Cs482-hwk2</h1>
-            <h2></h2>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-      </header>
+    <section class="main-content">
+      <h1>
+<a id="canny" class="anchor" href="#canny" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CANNY</h1>
 
-      <section id="downloads">
-        <span class="inner">
-          <a href="https://github.com/patrickchula/CS482-hwk2/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/patrickchula/CS482-hwk2/tarball/master" class="tgz"><em>download</em> .TGZ</a>
-        </span>
-      </section>
+<p>For the Canny I chose to use the thresholds 100,450 because I believed that it gave me a good indicator of strong lines. I checked with different types and when I used thresholds like 800,1000 there were very little lines. When I used 40,100, I was getting a lot of lines. So when it had the smaller thresholds it was noticing everything. 
+So I chose to have 100,200 because I only wanted to show the really strong edges. I did my testing with an image of the plants and window; my threshold was about to see the edge of the window, the plant against the sky and the door on the right.</p>
 
+<h1>
+<a id="standard-hough" class="anchor" href="#standard-hough" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>STANDARD HOUGH</h1>
 
-      <span class="banner-fix"></span>
+<p>I used the site we were directed from, opencv.org in order to learn about this. I chose to use the same threshold for my Canny. Some of the images did not provide any lines from the Canny edge detection. I checked very many different combinations of the edges to get the best lines. There were instances that I saw lines (for example on the ceilings) but the computer vision was not able to see them. Then were instances when it was picking up some very light lines. I didn’t want to have the Canny with a lot of lines because it made the Hough Standard image covered in lines.</p>
 
+<h1>
+<a id="probalistic-hough" class="anchor" href="#probalistic-hough" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROBALISTIC HOUGH</h1>
 
-      <section id="main_content">
-        <h2>
-<a id="canny" class="anchor" href="#canny" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>CANNY</h2>
-
-<pre><code>For the Canny I chose to use the thresholds 100,450 because I believed that it gave me a good indicator of strong lines. I checked with different types and when I used thresholds like 800,1000 there were very little lines. When I used 40,100, I was getting a lot of lines. So when it had the smaller thresholds it was noticing everything. So I chose to have 100,450 because I only wanted to show the really strong edges. I did my testing with an image of the plants and window; my threshold was about to see the edge of the window, the plant against the sky and the door on the right.
-</code></pre>
-
-<h2>
-<a id="standard-hough" class="anchor" href="#standard-hough" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>STANDARD HOUGH</h2>
-
-<pre><code>I used the site we were directed from, opencv.org in order to learn about this. I chose to use the same threshold for my Canny. Some of the images did not provide any lines from the Canny edge detection. I checked very many different combinations of the edges to get the best lines. There were instances that I saw lines (for example on the ceilings) but the computer vision was not able to see them. Then were instances when it was picking up some very light lines. I didn’t want to have the Canny with a lot of lines because it made the Hough Standard image covered in lines.
-</code></pre>
-
-<h2>
-<a id="probalistic-hough" class="anchor" href="#probalistic-hough" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>PROBALISTIC HOUGH</h2>
-
-<pre><code>    The biggest difference that I saw was that there more lines. But they were also a lot smaller. So it was getting more lines, because it was looking for smaller lines. Or maybe it was because the standard uses more of the angles with the RHO.
-</code></pre>
+<p>The biggest difference that I saw was that there more lines. But they were also a lot smaller. So it was getting more lines, because it was looking for smaller lines. Or maybe it was because the standard uses more of the angles with the RHO.</p>
 
 <h3>
 <a id="these-are-my-images-some-of-them-also-have-description-of-why-i-chose-them" class="anchor" href="#these-are-my-images-some-of-them-also-have-description-of-why-i-chose-them" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>THESE ARE MY IMAGES! Some of them also have description of why I chose them.</h3>
 
-<h1>
-<a id="4017" class="anchor" href="#4017" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4017</h1>
+<h2>
+<a id="4017" class="anchor" href="#4017" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4017</h2>
 
-<h1>
-<a id="4024" class="anchor" href="#4024" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4024</h1>
+<h2>
+<a id="4024" class="anchor" href="#4024" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4024</h2>
 
-<h1>
-<a id="4042--these-two-because-there-were-so-similar-yet-43-has-so-many-lines-also-to-note-that-4041-had-more-lines-than-4042-even-though-the-pictures-were-so-similar-still-the-vision-is-not-perfect-it-reminds-of-what-professor-duric-was-talking-about-earlier-on-that-humans-make-take-longer-but-we-are-smarter-at-vision" class="anchor" href="#4042--these-two-because-there-were-so-similar-yet-43-has-so-many-lines-also-to-note-that-4041-had-more-lines-than-4042-even-though-the-pictures-were-so-similar-still-the-vision-is-not-perfect-it-reminds-of-what-professor-duric-was-talking-about-earlier-on-that-humans-make-take-longer-but-we-are-smarter-at-vision" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4042  These two because there were so similar, yet 43 has so many lines (Also to note that 4041 had more lines than 4042. Even though the pictures were so similar.) Still the vision is not perfect. It reminds of what professor Duric was talking about earlier on, that humans make take longer but we are smarter at vision.</h1>
+<h2>
+<a id="4042" class="anchor" href="#4042" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4042</h2>
 
-<h1>
-<a id="4043" class="anchor" href="#4043" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4043</h1>
+<p>These two because there were so similar, yet 43 has so many lines (Also to note that 4041 had more lines than 4042. Even though the pictures were so similar.) Still the vision is not perfect. It reminds of what professor Duric was talking about earlier on, that humans make take longer but we are smarter at vision.</p>
 
-<h1>
-<a id="4057-because-it-does-not-show-any-lines-for-standardeven-though-there-are-clearly-so-many-lines-this-is-of-course-influenced-by-my-choice-of-threshold" class="anchor" href="#4057-because-it-does-not-show-any-lines-for-standardeven-though-there-are-clearly-so-many-lines-this-is-of-course-influenced-by-my-choice-of-threshold" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4057 BECAUSE IT DOES NOT SHOW ANY LINES FOR STANDARD...even though there are clearly so many lines. This is of course influenced by my choice of threshold.</h1>
+<h2>
+<a id="4043" class="anchor" href="#4043" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4043</h2>
 
-<h1>
-<a id="4087-i-chose-this-one-because-it-picked-up-so-many-lines-that-i-could-not-even-see" class="anchor" href="#4087-i-chose-this-one-because-it-picked-up-so-many-lines-that-i-could-not-even-see" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4087 I chose this one because it picked up so many lines, that I could not even see.</h1>
-      </section>
+<h2>
+<a id="4057" class="anchor" href="#4057" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4057</h2>
 
-      <footer>
-        <span class="ribbon-outer">
-          <span class="ribbon-inner">
-            <p>this project by <a href="https://github.com/patrickchula">patrickchula</a> can be found on <a href="https://github.com/patrickchula/CS482-hwk2">GitHub</a></p>
-          </span>
-          <span class="left-tail"></span>
-          <span class="right-tail"></span>
-        </span>
-        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
-        <span class="octocat"></span>
+<p>BECAUSE IT DOES NOT SHOW ANY LINES FOR STANDARD...even though there are clearly so many lines. This is of course influenced by my choice of threshold.</p>
+
+<h2>
+<a id="4087" class="anchor" href="#4087" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4087</h2>
+
+<p>I chose this one because it picked up so many lines, that I could not even see. </p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/patrickchula/CS482-hwk2">Cs482-hwk2</a> is maintained by <a href="https://github.com/patrickchula">patrickchula</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
 
-    </div>
+    </section>
 
-    
+  
   </body>
 </html>
